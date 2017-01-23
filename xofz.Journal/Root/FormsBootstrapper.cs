@@ -3,8 +3,10 @@
     using System.Threading;
     using System.Windows.Forms;
     using xofz.Framework.Materialization;
+    using xofz.Journal.Presentation;
     using xofz.Journal.Root.Commands;
     using xofz.Journal.UI.Forms;
+    using xofz.Presentation;
     using xofz.Root;
     using xofz.Root.Commands;
     using xofz.UI.Forms;
@@ -50,6 +52,8 @@
                 .Execute(new SetupHomeCommand(
                     mf,
                     w));
+
+            w.Run<Navigator>(n => n.Present<HomePresenter>());
         }
 
 

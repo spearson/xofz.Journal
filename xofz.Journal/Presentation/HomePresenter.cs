@@ -32,15 +32,17 @@
             this.ui.NewKeyTapped += this.ui_NewKeyTapped;
             this.ui.SubmitKeyTapped += this.ui_SubmitKeyTapped;
             this.ui.EntrySelected += this.ui_EntrySelected;
-            var entries = this.web.Run<
-                JournalEntryLoader,
-                IEnumerable<JournalEntry>>(
-                loader => loader.Load());
-            this.setAllEntries(entries.ToList());
+            var w = this.web;
+            w.Run<Navigator>(n => n.RegisterPresenter(this));
         }
 
         public override void Start()
         {
+            var entries = this.web.Run<
+                JournalEntryLoader,
+                IEnumerable<JournalEntry>>(
+                loader => loader.Load());
+            this.setAllEntries(entries.OrderByDescending(e => e.ModifiedTimestamp).ToList());
         }
 
         private void setAllEntries(IList<JournalEntry> allEntries)
@@ -82,6 +84,8 @@
             var w = this.web;
             w.Run<JournalEntrySaver>(saver => saver.Save(ce));
 
+            UiHelpers.Write(this.ui, () => this.ui.CurrentEntry = ce);
+            this.Start();
         }
 
         private void ui_EntrySelected(int entryIndex)
