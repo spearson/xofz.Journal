@@ -12,6 +12,11 @@
     {
         public IEnumerable<JournalEntry> Load()
         {
+            if (!Directory.Exists("Data"))
+            {
+                yield break;
+            }
+
             foreach (var filePath in Directory.GetFiles("Data"))
             {
                 var lines = File.ReadAllLines(filePath);

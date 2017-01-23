@@ -110,6 +110,7 @@
             // 
             // createdTextBox
             // 
+            this.createdTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.createdTextBox.Location = new System.Drawing.Point(83, 271);
             this.createdTextBox.Name = "createdTextBox";
             this.createdTextBox.ReadOnly = true;
@@ -118,6 +119,7 @@
             // 
             // modifiedTextBox
             // 
+            this.modifiedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.modifiedTextBox.Location = new System.Drawing.Point(83, 299);
             this.modifiedTextBox.Name = "modifiedTextBox";
             this.modifiedTextBox.ReadOnly = true;
@@ -126,6 +128,7 @@
             // 
             // contentTextBox
             // 
+            this.contentTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.contentTextBox.Location = new System.Drawing.Point(81, 327);
             this.contentTextBox.Multiline = true;
             this.contentTextBox.Name = "contentTextBox";
