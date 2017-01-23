@@ -72,7 +72,10 @@
 
         private void searchResultsViewer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            new Thread(() => this.EntrySelected?.Invoke(e.RowIndex)).Start();
+            if (e.RowIndex > -1 && e.RowIndex < this.entriesGrid.RowCount - 1)
+            {
+                new Thread(() => this.EntrySelected?.Invoke(e.RowIndex)).Start();
+            }
         }
 
         public IList<JournalEntry> Entries
