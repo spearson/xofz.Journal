@@ -53,7 +53,7 @@
 
         bool HomeUi.ContentEditable
         {
-            get { return this.contentTextBox.ReadOnly; }
+            get { return !this.contentTextBox.ReadOnly; }
 
             set { this.contentTextBox.ReadOnly = !value; }
         }

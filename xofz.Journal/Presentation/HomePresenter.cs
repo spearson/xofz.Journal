@@ -5,7 +5,6 @@
     using System.Linq;
     using System.Threading;
     using xofz.Framework;
-    using xofz.Framework.Materialization;
     using xofz.Journal.Framework;
     using xofz.Journal.UI;
     using xofz.Presentation;
@@ -54,8 +53,9 @@
         private void ui_NewKeyTapped()
         {
             var w = this.web;
+            var editable = UiHelpers.Read(this.ui, () => this.ui.ContentEditable);
             var current = UiHelpers.Read(this.ui, () => this.ui.CurrentEntry);
-            if (current.Content.Count > 0)
+            if (editable && current.Content.Count > 0)
             {
                 var discardChanges = w.Run<Messenger, Response>(m => UiHelpers.Read(
                     m.Subscriber,
