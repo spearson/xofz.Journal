@@ -37,11 +37,13 @@
 
         public override void Start()
         {
-            var entries = this.web.Run<
+            var w = this.web;
+            var entries = w.Run<
                 JournalEntryLoader,
                 IEnumerable<JournalEntry>>(
                 loader => loader.Load());
             this.setAllEntries(entries.OrderByDescending(e => e.ModifiedTimestamp).ToList());
+            w.Run<EventRaiser>(er => er.Raise(this.ui, "EntrySelected", 0));
         }
 
         private void setAllEntries(IList<JournalEntry> allEntries)

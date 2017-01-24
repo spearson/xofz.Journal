@@ -33,6 +33,8 @@
                 new Navigator());
             w.RegisterDependency(
                 this.messenger);
+            w.RegisterDependency(
+                new EventRaiser());
         }
 
         private MethodWeb web;
