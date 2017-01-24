@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.entriesGrid = new System.Windows.Forms.DataGridView();
-            this.createdTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiedTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.introColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,6 +37,9 @@
             this.contentTextBox = new System.Windows.Forms.TextBox();
             this.submitKey = new System.Windows.Forms.Button();
             this.newKey = new System.Windows.Forms.Button();
+            this.createdTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifiedTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.introColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.entriesGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,27 +58,6 @@
             this.entriesGrid.Size = new System.Drawing.Size(772, 222);
             this.entriesGrid.TabIndex = 2;
             this.entriesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchResultsViewer_CellClick);
-            // 
-            // createdTimestampColumn
-            // 
-            this.createdTimestampColumn.HeaderText = "Created Timestamp";
-            this.createdTimestampColumn.Name = "createdTimestampColumn";
-            this.createdTimestampColumn.ReadOnly = true;
-            this.createdTimestampColumn.Width = 200;
-            // 
-            // modifiedTimestampColumn
-            // 
-            this.modifiedTimestampColumn.HeaderText = "Modified Timestamp";
-            this.modifiedTimestampColumn.Name = "modifiedTimestampColumn";
-            this.modifiedTimestampColumn.ReadOnly = true;
-            this.modifiedTimestampColumn.Width = 200;
-            // 
-            // introColumn
-            // 
-            this.introColumn.HeaderText = "";
-            this.introColumn.Name = "introColumn";
-            this.introColumn.ReadOnly = true;
-            this.introColumn.Width = 310;
             // 
             // label2
             // 
@@ -168,6 +147,27 @@
             this.newKey.UseVisualStyleBackColor = true;
             this.newKey.Click += new System.EventHandler(this.newKey_Click);
             // 
+            // createdTimestampColumn
+            // 
+            this.createdTimestampColumn.HeaderText = "Created Timestamp";
+            this.createdTimestampColumn.Name = "createdTimestampColumn";
+            this.createdTimestampColumn.ReadOnly = true;
+            this.createdTimestampColumn.Width = 200;
+            // 
+            // modifiedTimestampColumn
+            // 
+            this.modifiedTimestampColumn.HeaderText = "Modified Timestamp";
+            this.modifiedTimestampColumn.Name = "modifiedTimestampColumn";
+            this.modifiedTimestampColumn.ReadOnly = true;
+            this.modifiedTimestampColumn.Width = 200;
+            // 
+            // introColumn
+            // 
+            this.introColumn.HeaderText = "";
+            this.introColumn.Name = "introColumn";
+            this.introColumn.ReadOnly = true;
+            this.introColumn.Width = 329;
+            // 
             // FormMainUi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -195,9 +195,6 @@
 
         #endregion
         private System.Windows.Forms.DataGridView entriesGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdTimestampColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn modifiedTimestampColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn introColumn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -206,6 +203,9 @@
         private System.Windows.Forms.TextBox contentTextBox;
         private System.Windows.Forms.Button submitKey;
         private System.Windows.Forms.Button newKey;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdTimestampColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modifiedTimestampColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn introColumn;
     }
 }
 

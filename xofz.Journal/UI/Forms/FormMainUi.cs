@@ -101,7 +101,7 @@
                     this.entriesGrid.Rows.Add(
                         entry.CreatedTimestamp?.ToString("yyyy/MM/dd hh:mm:ss tt"),
                         entry.ModifiedTimestamp?.ToString("yyyy/MM/dd hh:mm:ss tt"),
-                        summary);
+                        summary + "...");
                 }
             }
         }
