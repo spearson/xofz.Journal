@@ -55,7 +55,11 @@
         {
             get { return !this.contentTextBox.ReadOnly; }
 
-            set { this.contentTextBox.ReadOnly = !value; }
+            set
+            {
+                this.contentTextBox.ReadOnly = !value;
+                this.submitKey.Enabled = value;
+            }
         }
 
         private void newKey_Click(object sender, EventArgs e)
