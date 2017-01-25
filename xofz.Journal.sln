@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xofz.Journal", "xofz.Journal\xofz.Journal.csproj", "{BC3A2E0A-D5CB-412B-A25C-0C1DAAA0A7FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xofz.Journal.Tests", "xofz.Journal.Tests\xofz.Journal.Tests.csproj", "{68B9F22D-450C-46D2-9CE6-CB5919D3745B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{BC3A2E0A-D5CB-412B-A25C-0C1DAAA0A7FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC3A2E0A-D5CB-412B-A25C-0C1DAAA0A7FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC3A2E0A-D5CB-412B-A25C-0C1DAAA0A7FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B9F22D-450C-46D2-9CE6-CB5919D3745B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B9F22D-450C-46D2-9CE6-CB5919D3745B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B9F22D-450C-46D2-9CE6-CB5919D3745B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B9F22D-450C-46D2-9CE6-CB5919D3745B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

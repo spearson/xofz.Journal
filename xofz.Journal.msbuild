@@ -1,4 +1,4 @@
-<Project DefaultTargets="ChangeVersion;Build;Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="ChangeVersion;Build;Test;Deploy" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
 
   <Import Project="$(MSBuildExtensionsPath)\MSBuildCommunityTasks\MSBuild.Community.Tasks.Targets" />
@@ -8,7 +8,7 @@
     <Version>$(BUILD_NUMBER)</Version>
     <ProjectName>xofz.Journal</ProjectName>
     <BuildDir>$(ProjectName)\bin\Release</BuildDir>
-    <DeployFolder>C:\Dropbox\xofz.Apps\Journal\xofz.Journal-$(Version)</DeployFolder>
+    <DeployFolder>C:\Dropbox\xofz.Apps\Journal\$(ProjectName)-$(Version)</DeployFolder>
   </PropertyGroup>
 
 
@@ -33,6 +33,11 @@
   <Target Name="Build" DependsOnTargets="ChangeVersion">
     <RemoveDir Directories="$(BuildDir)" />
     <MSBuild Projects="$(ProjectName).sln" Targets="Build" Properties="Configuration=Release;Platform=Any CPU" />
+  </Target>
+  
+  <UsingTask AssemblyFile="C:\Dropbox\Libraries\xUnit\xunit.runner.msbuild.dll" TaskName="Xunit.Runner.MSBuild.xunit" />
+  <Target Name="Test" DependsOnTargets="Build">
+    <xunit Assembly="$(ProjectName).Tests\bin\Release\$(ProjectName).Tests.dll" Xml="test.xunit.dll.xml" />
   </Target>
 
   <Target Name="Deploy" DependsOnTargets="Build">
