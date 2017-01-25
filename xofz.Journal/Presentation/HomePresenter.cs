@@ -92,6 +92,11 @@
 
         private void ui_EntrySelected(int entryIndex)
         {
+            if (this.allEntries.Count - 1 < entryIndex)
+            {
+                return;
+            }
+
             this.setCurrentEntry(this.allEntries[entryIndex]);
         }
 
