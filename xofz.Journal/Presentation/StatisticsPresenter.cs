@@ -71,9 +71,9 @@
             {
                 UiHelpers.Write(this.ui, () =>
                 {
-                    this.ui.AvgTime = "0h, 0m, 0s";
-                    this.ui.AvgTimeThisMonth = "0h, 0m, 0s";
-                    this.ui.AvgTimeThisYear = "0h, 0m, 0s";
+                    this.ui.AvgTime = "0h 0m 0s";
+                    this.ui.AvgTimeThisMonth = "0h 0m 0s";
+                    this.ui.AvgTimeThisYear = "0h 0m 0s";
                 });
                 return;
             }
@@ -89,10 +89,13 @@
                              DateTime.Now.Year,
                              DateTime.Now.Month,
                              1)));
-            var timeThisMonth = this.getTotalTime(entriesThisMonth);
-            var avgTimeThisMonth = new TimeSpan(timeThisMonth.Ticks / entriesThisMonth.Count);
-            UiHelpers.Write(this.ui, () => this.ui.AvgTimeThisMonth
-                = this.formatTimeSpan(avgTimeThisMonth));
+            if (entriesThisMonth.Count > 0)
+            {
+                var timeThisMonth = this.getTotalTime(entriesThisMonth);
+                var avgTimeThisMonth = new TimeSpan(timeThisMonth.Ticks / entriesThisMonth.Count);
+                UiHelpers.Write(this.ui, () => this.ui.AvgTimeThisMonth
+                    = this.formatTimeSpan(avgTimeThisMonth));
+            }
 
             var entriesThisYear = new LinkedList<JournalEntry>(
                 entries.Where(
@@ -100,9 +103,12 @@
                              DateTime.Now.Year,
                              1,
                              1)));
-            var timeThisYear = this.getTotalTime(entriesThisYear);
-            var avgTimeThisYear = new TimeSpan(timeThisYear.Ticks / entriesThisYear.Count);
-            UiHelpers.Write(this.ui, () => this.ui.AvgTimeThisYear = this.formatTimeSpan(avgTimeThisYear));
+            if (entriesThisYear.Count > 0)
+            {
+                var timeThisYear = this.getTotalTime(entriesThisYear);
+                var avgTimeThisYear = new TimeSpan(timeThisYear.Ticks / entriesThisYear.Count);
+                UiHelpers.Write(this.ui, () => this.ui.AvgTimeThisYear = this.formatTimeSpan(avgTimeThisYear));
+            }
         }
 
         private TimeSpan getTotalTime(IEnumerable<JournalEntry> entries)
