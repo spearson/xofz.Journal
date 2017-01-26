@@ -51,9 +51,13 @@
                     w))
                 .Execute(new SetupHomeCommand(
                     mf,
+                    w))
+                .Execute(new SetupStatisticsCommand(
+                    mf.StatisticsUi,
                     w));
 
             w.Run<Navigator>(n => n.Present<HomePresenter>());
+            w.Run<Navigator>(n => n.PresentFluidly<StatisticsPresenter>());
         }
 
 

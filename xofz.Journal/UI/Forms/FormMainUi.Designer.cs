@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.entriesGrid = new System.Windows.Forms.DataGridView();
+            this.createdTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modifiedTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.introColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -37,9 +40,7 @@
             this.contentTextBox = new System.Windows.Forms.TextBox();
             this.submitKey = new System.Windows.Forms.Button();
             this.newKey = new System.Windows.Forms.Button();
-            this.createdTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modifiedTimestampColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.introColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statisticsUi = new xofz.Journal.UI.Forms.UserControlStatisticsUi();
             ((System.ComponentModel.ISupportInitialize)(this.entriesGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +59,27 @@
             this.entriesGrid.Size = new System.Drawing.Size(772, 222);
             this.entriesGrid.TabIndex = 2;
             this.entriesGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.searchResultsViewer_CellClick);
+            // 
+            // createdTimestampColumn
+            // 
+            this.createdTimestampColumn.HeaderText = "Created Timestamp";
+            this.createdTimestampColumn.Name = "createdTimestampColumn";
+            this.createdTimestampColumn.ReadOnly = true;
+            this.createdTimestampColumn.Width = 200;
+            // 
+            // modifiedTimestampColumn
+            // 
+            this.modifiedTimestampColumn.HeaderText = "Modified Timestamp";
+            this.modifiedTimestampColumn.Name = "modifiedTimestampColumn";
+            this.modifiedTimestampColumn.ReadOnly = true;
+            this.modifiedTimestampColumn.Width = 200;
+            // 
+            // introColumn
+            // 
+            this.introColumn.HeaderText = "";
+            this.introColumn.Name = "introColumn";
+            this.introColumn.ReadOnly = true;
+            this.introColumn.Width = 329;
             // 
             // label2
             // 
@@ -139,7 +161,7 @@
             this.newKey.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
             this.newKey.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.newKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.newKey.Location = new System.Drawing.Point(125, 190);
+            this.newKey.Location = new System.Drawing.Point(131, 190);
             this.newKey.Name = "newKey";
             this.newKey.Size = new System.Drawing.Size(102, 32);
             this.newKey.TabIndex = 10;
@@ -147,31 +169,18 @@
             this.newKey.UseVisualStyleBackColor = true;
             this.newKey.Click += new System.EventHandler(this.newKey_Click);
             // 
-            // createdTimestampColumn
+            // statisticsUi
             // 
-            this.createdTimestampColumn.HeaderText = "Created Timestamp";
-            this.createdTimestampColumn.Name = "createdTimestampColumn";
-            this.createdTimestampColumn.ReadOnly = true;
-            this.createdTimestampColumn.Width = 200;
-            // 
-            // modifiedTimestampColumn
-            // 
-            this.modifiedTimestampColumn.HeaderText = "Modified Timestamp";
-            this.modifiedTimestampColumn.Name = "modifiedTimestampColumn";
-            this.modifiedTimestampColumn.ReadOnly = true;
-            this.modifiedTimestampColumn.Width = 200;
-            // 
-            // introColumn
-            // 
-            this.introColumn.HeaderText = "";
-            this.introColumn.Name = "introColumn";
-            this.introColumn.ReadOnly = true;
-            this.introColumn.Width = 329;
+            this.statisticsUi.Location = new System.Drawing.Point(0, 0);
+            this.statisticsUi.Name = "statisticsUi";
+            this.statisticsUi.Size = new System.Drawing.Size(233, 184);
+            this.statisticsUi.TabIndex = 11;
             // 
             // FormMainUi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.statisticsUi);
             this.Controls.Add(this.newKey);
             this.Controls.Add(this.submitKey);
             this.Controls.Add(this.contentTextBox);
@@ -206,6 +215,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn createdTimestampColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn modifiedTimestampColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn introColumn;
+        private UserControlStatisticsUi statisticsUi;
     }
 }
 

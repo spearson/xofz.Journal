@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Threading;
     using xofz.Framework;
+    using xofz.Framework.Materialization;
     using xofz.Journal.Framework;
     using xofz.Journal.UI;
     using xofz.Presentation;
@@ -46,9 +47,11 @@
             w.Run<EventRaiser>(er => er.Raise(this.ui, "EntrySelected", 0));
         }
 
-        private void setAllEntries(IList<JournalEntry> allEntries)
+        private void setAllEntries(List<JournalEntry> allEntries)
         {
             this.allEntries = allEntries;
+            this.web.Run<JournalEntriesHolder>(holder => holder.Entries
+                = new OrderedMaterializedEnumerable<JournalEntry>(allEntries));
             UiHelpers.Write(this.ui, () => this.ui.Entries = allEntries);
         }
 

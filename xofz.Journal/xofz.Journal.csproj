@@ -43,13 +43,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Framework\JournalEntriesHolder.cs" />
     <Compile Include="Framework\JournalEntryLoader.cs" />
     <Compile Include="Framework\JournalEntryManager.cs" />
     <Compile Include="Framework\JournalEntrySaver.cs" />
     <Compile Include="JournalEntry.cs" />
     <Compile Include="Presentation\HomePresenter.cs" />
+    <Compile Include="Presentation\StatisticsPresenter.cs" />
     <Compile Include="Root\Commands\SetupHomeCommand.cs" />
     <Compile Include="Root\Commands\SetupMethodWebCommand.cs" />
+    <Compile Include="Root\Commands\SetupStatisticsCommand.cs" />
     <Compile Include="Root\FormsBootstrapper.cs" />
     <Compile Include="UI\Forms\FormMainUi.cs">
       <SubType>Form</SubType>
@@ -59,7 +62,14 @@
     </Compile>
     <Compile Include="Root\EntryPoint.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Forms\UserControlStatisticsUi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Forms\UserControlStatisticsUi.Designer.cs">
+      <DependentUpon>UserControlStatisticsUi.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\HomeUi.cs" />
+    <Compile Include="UI\StatisticsUi.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -72,6 +82,9 @@
     </Compile>
     <EmbeddedResource Include="UI\Forms\FormMainUi.resx">
       <DependentUpon>FormMainUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Forms\UserControlStatisticsUi.resx">
+      <DependentUpon>UserControlStatisticsUi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

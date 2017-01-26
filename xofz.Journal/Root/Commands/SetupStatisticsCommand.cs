@@ -1,14 +1,14 @@
 ﻿namespace xofz.Journal.Root.Commands
 {
     using xofz.Framework;
-    using xofz.Journal.Framework;
     using xofz.Journal.Presentation;
     using xofz.Journal.UI;
     using xofz.Root;
-    public class SetupHomeCommand : Command
+
+    public class SetupStatisticsCommand : Command
     {
-        public SetupHomeCommand(
-            HomeUi ui,
+        public SetupStatisticsCommand(
+            StatisticsUi ui,
             MethodWeb web)
         {
             this.ui = ui;
@@ -18,8 +18,7 @@
         public override void Execute()
         {
             this.registerDependencies();
-
-            new HomePresenter(
+            new StatisticsPresenter(
                     this.ui,
                     this.web)
                 .Setup();
@@ -29,12 +28,11 @@
         {
             var w = this.web;
             w.RegisterDependency(
-                new JournalEntryManager());
-            w.RegisterDependency(
-                new JournalEntriesHolder());
+                new xofz.Framework.Timer(),
+                "StatisticsTimer");
         }
 
-        private readonly HomeUi ui;
+        private readonly StatisticsUi ui;
         private readonly MethodWeb web;
     }
 }

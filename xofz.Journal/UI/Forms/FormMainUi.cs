@@ -17,6 +17,8 @@
             this.InitializeComponent();
         }
 
+        public virtual StatisticsUi StatisticsUi => this.statisticsUi;
+
         public event Action ShutdownRequested;
 
         public event Action NewKeyTapped;
@@ -62,27 +64,7 @@
             }
         }
 
-        private void newKey_Click(object sender, EventArgs e)
-        {
-            new Thread(() => this.NewKeyTapped?.Invoke()).Start();
-        }
-
-        private readonly Func<IEnumerable<string>, MaterializedEnumerable<string>> materializeStrings;
-
-        private void submitKey_Click(object sender, EventArgs e)
-        {
-            new Thread(() => this.SubmitKeyTapped?.Invoke()).Start();
-        }
-
-        private void searchResultsViewer_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex > -1 && e.RowIndex < this.entriesGrid.RowCount - 1)
-            {
-                new Thread(() => this.EntrySelected?.Invoke(e.RowIndex)).Start();
-            }
-        }
-
-        public IList<JournalEntry> Entries
+        IList<JournalEntry> HomeUi.Entries
         {
             get { return new List<JournalEntry>(); }
 
@@ -105,5 +87,25 @@
                 }
             }
         }
+
+        private void newKey_Click(object sender, EventArgs e)
+        {
+            new Thread(() => this.NewKeyTapped?.Invoke()).Start();
+        }
+
+        private void submitKey_Click(object sender, EventArgs e)
+        {
+            new Thread(() => this.SubmitKeyTapped?.Invoke()).Start();
+        }
+
+        private void searchResultsViewer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex > -1 && e.RowIndex < this.entriesGrid.RowCount - 1)
+            {
+                new Thread(() => this.EntrySelected?.Invoke(e.RowIndex)).Start();
+            }
+        }
+
+        private readonly Func<IEnumerable<string>, MaterializedEnumerable<string>> materializeStrings;
     }
 }

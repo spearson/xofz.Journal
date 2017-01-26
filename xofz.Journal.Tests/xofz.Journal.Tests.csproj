@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Presentation\HomePresenterTests.cs" />
+    <Compile Include="Presentation\StatisticsPresenterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Root\Commands\SetupHomeCommandTests.cs" />
     <Compile Include="Root\Commands\SetupMethodWebCommandTests.cs" />
