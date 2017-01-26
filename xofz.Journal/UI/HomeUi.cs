@@ -16,6 +16,8 @@
 
         JournalEntry CurrentEntry { get; set; }
 
+        string TotalTime { get; set; }
+
         bool ContentEditable { get; set; }
     }
 }

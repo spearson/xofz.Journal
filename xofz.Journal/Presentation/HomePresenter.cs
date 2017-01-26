@@ -112,6 +112,16 @@
 
             this.currentEntry = currentEntry;
             var editable = currentEntry.CreatedTimestamp.Value.Date == DateTime.Today;
+            var totalTime = TimeSpan.Zero;
+            if (currentEntry.ModifiedTimestamp != null)
+            {
+                totalTime = currentEntry.ModifiedTimestamp.Value 
+                    - currentEntry.CreatedTimestamp.Value;
+            }
+
+            UiHelpers.Write(this.ui, () => this.ui.TotalTime =
+            totalTime.ToString(@"dd\d\ hh\h\ mm\m\ ss\s"));
+
             UiHelpers.Write(this.ui, () =>
             {
                 this.ui.CurrentEntry = currentEntry;

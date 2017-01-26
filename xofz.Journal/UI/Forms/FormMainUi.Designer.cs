@@ -41,6 +41,8 @@
             this.submitKey = new System.Windows.Forms.Button();
             this.newKey = new System.Windows.Forms.Button();
             this.statisticsUi = new xofz.Journal.UI.Forms.UserControlStatisticsUi();
+            this.label1 = new System.Windows.Forms.Label();
+            this.totalTimeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.entriesGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -176,10 +178,29 @@
             this.statisticsUi.Size = new System.Drawing.Size(233, 184);
             this.statisticsUi.TabIndex = 11;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(300, 302);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(70, 16);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Total time:";
+            // 
+            // totalTimeLabel
+            // 
+            this.totalTimeLabel.AutoSize = true;
+            this.totalTimeLabel.Location = new System.Drawing.Point(376, 302);
+            this.totalTimeLabel.Name = "totalTimeLabel";
+            this.totalTimeLabel.Size = new System.Drawing.Size(0, 16);
+            this.totalTimeLabel.TabIndex = 13;
+            // 
             // FormMainUi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(1008, 561);
+            this.Controls.Add(this.totalTimeLabel);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.statisticsUi);
             this.Controls.Add(this.newKey);
             this.Controls.Add(this.submitKey);
@@ -216,6 +237,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn modifiedTimestampColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn introColumn;
         private UserControlStatisticsUi statisticsUi;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label totalTimeLabel;
     }
 }
 

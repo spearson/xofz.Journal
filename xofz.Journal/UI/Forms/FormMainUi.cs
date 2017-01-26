@@ -27,6 +27,13 @@
 
         public event Action<int> EntrySelected;
 
+        string HomeUi.TotalTime
+        {
+            get { return this.totalTimeLabel.Text; }
+
+            set { this.totalTimeLabel.Text = value; }
+        }
+
         private void this_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
