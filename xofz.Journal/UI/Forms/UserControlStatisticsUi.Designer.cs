@@ -69,9 +69,9 @@
             this.valuesPanel.Controls.Add(this.countThisMonthLabel);
             this.valuesPanel.Controls.Add(this.countTotalLabel);
             this.valuesPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.valuesPanel.Location = new System.Drawing.Point(113, 25);
+            this.valuesPanel.Location = new System.Drawing.Point(102, 25);
             this.valuesPanel.Name = "valuesPanel";
-            this.valuesPanel.Size = new System.Drawing.Size(114, 153);
+            this.valuesPanel.Size = new System.Drawing.Size(125, 153);
             this.valuesPanel.TabIndex = 1;
             // 
             // avgTimeYearLabel
@@ -139,13 +139,13 @@
             this.namesPanel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namesPanel.Location = new System.Drawing.Point(6, 25);
             this.namesPanel.Name = "namesPanel";
-            this.namesPanel.Size = new System.Drawing.Size(101, 153);
+            this.namesPanel.Size = new System.Drawing.Size(90, 153);
             this.namesPanel.TabIndex = 0;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(48, 112);
+            this.label5.Location = new System.Drawing.Point(37, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 13);
             this.label5.TabIndex = 5;
@@ -155,7 +155,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 96);
+            this.label6.Location = new System.Drawing.Point(28, 96);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 13);
             this.label6.TabIndex = 4;
@@ -164,9 +164,9 @@
             // 
             // label4
             // 
-            this.label4.Location = new System.Drawing.Point(6, 51);
+            this.label4.Location = new System.Drawing.Point(10, 51);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(95, 43);
+            this.label4.Size = new System.Drawing.Size(80, 43);
             this.label4.TabIndex = 3;
             this.label4.Text = "Average time from creation to final edit:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -174,7 +174,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(48, 34);
+            this.label3.Location = new System.Drawing.Point(37, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(53, 13);
             this.label3.TabIndex = 2;
@@ -184,7 +184,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 18);
+            this.label2.Location = new System.Drawing.Point(28, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 1;
@@ -194,7 +194,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 2);
+            this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 13);
             this.label1.TabIndex = 0;

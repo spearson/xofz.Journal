@@ -179,7 +179,7 @@
 
                 this.timer.Elapsed += Raise.With<Action>();
 
-                Assert.Equal("0h 0m 0s", this.ui.AvgTime);
+                Assert.Equal("0d 0h 0m 0s", this.ui.AvgTime);
             }
 
             [Fact]
@@ -192,7 +192,7 @@
 
                 this.timer.Elapsed += Raise.With<Action>();
 
-                Assert.Equal("0h 0m 0s", this.ui.AvgTimeThisMonth);
+                Assert.Equal("0d 0h 0m 0s", this.ui.AvgTimeThisMonth);
             }
 
             [Fact]
@@ -205,7 +205,7 @@
 
                 this.timer.Elapsed += Raise.With<Action>();
 
-                Assert.Equal("0h 0m 0s", this.ui.AvgTimeThisYear);
+                Assert.Equal("0d 0h 0m 0s", this.ui.AvgTimeThisYear);
             }
         }
     }

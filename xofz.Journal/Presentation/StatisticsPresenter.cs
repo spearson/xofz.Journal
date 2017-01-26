@@ -71,9 +71,9 @@
             {
                 UiHelpers.Write(this.ui, () =>
                 {
-                    this.ui.AvgTime = "0h 0m 0s";
-                    this.ui.AvgTimeThisMonth = "0h 0m 0s";
-                    this.ui.AvgTimeThisYear = "0h 0m 0s";
+                    this.ui.AvgTime = this.formatTimeSpan(TimeSpan.Zero);
+                    this.ui.AvgTimeThisMonth = this.formatTimeSpan(TimeSpan.Zero);
+                    this.ui.AvgTimeThisYear = this.formatTimeSpan(TimeSpan.Zero);
                 });
                 return;
             }
@@ -130,9 +130,9 @@
 
         private string formatTimeSpan(TimeSpan timeSpan)
         {
-            return timeSpan.Days + "d, " 
-                + timeSpan.Hours + "h, " 
-                + timeSpan.Minutes + "m, " 
+            return timeSpan.Days + "d " 
+                + timeSpan.Hours + "h " 
+                + timeSpan.Minutes + "m " 
                 + timeSpan.Seconds + "s";
         }
 
