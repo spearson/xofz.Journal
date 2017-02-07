@@ -18,6 +18,7 @@
                     A.Fake<HomeUi>(), 
                     this.web);
             }
+
             protected readonly MethodWeb web;
             protected readonly SetupHomeCommand command;
         }

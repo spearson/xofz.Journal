@@ -34,6 +34,10 @@
             this.ui.EntrySelected += this.ui_EntrySelected;
             var w = this.web;
             w.Run<Navigator>(n => n.RegisterPresenter(this));
+            w.Subscribe<xofz.Framework.Timer>(
+                "Elapsed",
+                this.timer_Elapsed,
+                "HomeTimer");
         }
 
         public override void Start()
@@ -45,6 +49,13 @@
                 loader => loader.Load());
             this.setAllEntries(entries.OrderByDescending(e => e.ModifiedTimestamp).ToList());
             w.Run<EventRaiser>(er => er.Raise(this.ui, "EntrySelected", 0));
+            w.Run<xofz.Framework.Timer>(t => t.Start(1000), "HomeTimer");
+        }
+
+        public override void Stop()
+        {
+            var w = this.web;
+            w.Run<xofz.Framework.Timer>(t => t.Stop(), "HomeTimer");
         }
 
         private void setAllEntries(List<JournalEntry> allEntries)
@@ -103,6 +114,25 @@
             this.setCurrentEntry(this.allEntries[entryIndex]);
         }
 
+        private void timer_Elapsed()
+        {
+            if (this.currentEntry?.CreatedTimestamp == null)
+            {
+                return;
+            }
+
+            if (this.currentEntry?.ModifiedTimestamp == null)
+            {
+                return;
+            }
+
+            var editable = this.currentEntry.CreatedTimestamp.Value.Date 
+                == DateTime.Today;
+            UiHelpers.Write(
+                this.ui,
+                () => this.ui.ContentEditable = editable);
+        }
+
         private void setCurrentEntry(JournalEntry currentEntry)
         {
             if (currentEntry.CreatedTimestamp == null)
@@ -120,7 +150,7 @@
             }
 
             UiHelpers.Write(this.ui, () => this.ui.TotalTime =
-            totalTime.ToString(@"dd\d\ hh\h\ mm\m\ ss\s"));
+                totalTime.ToString(@"dd\d\ hh\h\ mm\m\ ss\s"));
 
             UiHelpers.Write(this.ui, () =>
             {

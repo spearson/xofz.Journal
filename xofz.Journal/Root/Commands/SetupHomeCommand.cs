@@ -32,6 +32,9 @@
                 new JournalEntryManager());
             w.RegisterDependency(
                 new JournalEntriesHolder());
+            w.RegisterDependency(
+                new xofz.Framework.Timer(),
+                "HomeTimer");
         }
 
         private readonly HomeUi ui;
