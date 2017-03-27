@@ -40,7 +40,7 @@
     <xunit Assemblies="$(ProjectName).Tests\bin\Release\$(ProjectName).Tests.dll" />
   </Target>
 
-  <Target Name="Deploy" DependsOnTargets="Build">
+  <Target Name="Deploy" DependsOnTargets="Test">
     <MakeDir Directories="$(DeployFolder)" Condition="!Exists('$(DeployFolder)')"/>
     <ItemGroup>
       <FilesToMove Include="$(BuildDir)\$(ProjectName).exe" />
