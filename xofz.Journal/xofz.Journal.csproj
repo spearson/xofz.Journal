@@ -45,7 +45,7 @@
   <ItemGroup>
     <Compile Include="Framework\JournalEntriesHolder.cs" />
     <Compile Include="Framework\JournalEntryLoader.cs" />
-    <Compile Include="Framework\JournalEntryManager.cs" />
+    <Compile Include="Framework\Implementation\JournalEntryManager.cs" />
     <Compile Include="Framework\JournalEntrySaver.cs" />
     <Compile Include="JournalEntry.cs" />
     <Compile Include="Presentation\HomePresenter.cs" />

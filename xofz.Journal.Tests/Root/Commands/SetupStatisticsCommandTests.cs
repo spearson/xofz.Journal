@@ -2,38 +2,37 @@
 {
     using FakeItEasy;
     using xofz.Framework;
-    using xofz.Journal.Framework;
-    using xofz.Journal.Framework.Implementation;
     using xofz.Journal.Root.Commands;
     using xofz.Journal.UI;
     using Xunit;
 
-    public class SetupHomeCommandTests
+    public class SetupStatisticsCommandTests
     {
         public class Context
         {
             protected Context()
             {
                 this.web = A.Fake<MethodWeb>();
-                this.command = new SetupHomeCommand(
-                    A.Fake<HomeUi>(), 
+                this.command = new SetupStatisticsCommand(
+                    A.Fake<StatisticsUi>(),
                     this.web);
+
             }
 
             protected readonly MethodWeb web;
-            protected readonly SetupHomeCommand command;
+            protected readonly SetupStatisticsCommand command;
         }
 
         public class When_Execute_is_called : Context
         {
             [Fact]
-            public void Registers_a_JournalEntryManager()
+            public void Registers_a_statistics_timer()
             {
                 this.command.Execute();
 
                 A.CallTo(() => this.web.RegisterDependency(
-                    A<JournalEntryManager>.Ignored,
-                    null))
+                    A<xofz.Framework.Timer>.Ignored,
+                    "StatisticsTimer"))
                     .MustHaveHappened();
             }
         }

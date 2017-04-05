@@ -2,6 +2,7 @@
 {
     using xofz.Framework;
     using xofz.Journal.Framework;
+    using xofz.Journal.Framework.Implementation;
     using xofz.Journal.Presentation;
     using xofz.Journal.UI;
     using xofz.Root;

@@ -81,6 +81,18 @@
 
                 A.CallTo(() => n.Present<HomePresenter>()).MustHaveHappened();
             }
+
+            [Fact]
+            public void Presents_a_StatisticsPresenter_fluidly()
+            {
+                var w = this.web;
+                var n = A.Fake<Navigator>();
+                w.RegisterDependency(n);
+
+                this.bootstrapper.Bootstrap();
+
+                A.CallTo(() => n.PresentFluidly<StatisticsPresenter>()).MustHaveHappened();
+            }
         }
     }
 }

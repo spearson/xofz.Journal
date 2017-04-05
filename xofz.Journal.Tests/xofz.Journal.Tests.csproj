@@ -58,6 +58,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Root\Commands\SetupHomeCommandTests.cs" />
     <Compile Include="Root\Commands\SetupMethodWebCommandTests.cs" />
+    <Compile Include="Root\Commands\SetupStatisticsCommandTests.cs" />
     <Compile Include="Root\FormsBootstrapperTests.cs" />
   </ItemGroup>
   <ItemGroup>
