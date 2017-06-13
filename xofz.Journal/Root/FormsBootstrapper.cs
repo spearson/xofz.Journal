@@ -35,7 +35,7 @@
 
             this.setMainForm(
                 new FormMainUi(
-                    s => new LinkedListMaterializedEnumerable<string>(s)));
+                    new LinkedListMaterializer()));
             var mf = this.mainForm;
             var fm = new FormsMessenger { Subscriber = mf };
 

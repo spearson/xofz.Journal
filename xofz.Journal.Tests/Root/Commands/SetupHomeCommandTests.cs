@@ -2,7 +2,6 @@
 {
     using FakeItEasy;
     using xofz.Framework;
-    using xofz.Journal.Framework;
     using xofz.Journal.Framework.Implementation;
     using xofz.Journal.Root.Commands;
     using xofz.Journal.UI;

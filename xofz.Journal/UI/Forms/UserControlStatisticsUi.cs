@@ -11,44 +11,44 @@
 
         string StatisticsUi.TotalCount
         {
-            get { return this.countTotalLabel.Text; }
+            get => this.countTotalLabel.Text;
 
-            set { this.countTotalLabel.Text = value; }
+            set => this.countTotalLabel.Text = value;
         }
 
         string StatisticsUi.CountThisMonth
         {
-            get { return this.countThisMonthLabel.Text; }
+            get => this.countThisMonthLabel.Text;
 
-            set { this.countThisMonthLabel.Text = value; }
+            set => this.countThisMonthLabel.Text = value;
         }
 
         string StatisticsUi.CountThisYear
         {
-            get { return this.countThisYearLabel.Text; }
+            get => this.countThisYearLabel.Text;
 
-            set { this.countThisYearLabel.Text = value; }
+            set => this.countThisYearLabel.Text = value;
         }
 
         string StatisticsUi.AvgTime
         {
-            get { return this.avgTimeLabel.Text; }
+            get => this.avgTimeLabel.Text;
 
-            set { this.avgTimeLabel.Text = value; }
+            set => this.avgTimeLabel.Text = value;
         }
 
         string StatisticsUi.AvgTimeThisMonth
         {
-            get { return this.avgTimeMonthLabel.Text; }
+            get => this.avgTimeMonthLabel.Text;
 
-            set { this.avgTimeMonthLabel.Text = value; }
+            set => this.avgTimeMonthLabel.Text = value;
         }
 
         string StatisticsUi.AvgTimeThisYear
         {
-            get { return this.avgTimeYearLabel.Text; }
+            get => this.avgTimeYearLabel.Text;
 
-            set { this.avgTimeYearLabel.Text = value; }
+            set => this.avgTimeYearLabel.Text = value;
         }
     }
 }

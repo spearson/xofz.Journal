@@ -11,9 +11,9 @@
     public partial class FormMainUi : FormUi, MainUi, HomeUi
     {
         public FormMainUi(
-            Func<IEnumerable<string>, MaterializedEnumerable<string>> materializeStrings)
+            Materializer materializer)
         {
-            this.materializeStrings = materializeStrings;
+            this.materializer = materializer;
             this.InitializeComponent();
         }
 
@@ -29,9 +29,9 @@
 
         string HomeUi.TotalTime
         {
-            get { return this.totalTimeLabel.Text; }
+            get => this.totalTimeLabel.Text;
 
-            set { this.totalTimeLabel.Text = value; }
+            set => this.totalTimeLabel.Text = value;
         }
 
         private void this_FormClosing(object sender, FormClosingEventArgs e)
@@ -42,13 +42,10 @@
 
         public JournalEntry CurrentEntry
         {
-            get
+            get => new JournalEntry
             {
-                return new JournalEntry
-                {
-                    Content = this.materializeStrings(this.contentTextBox.Lines)
-                };
-            }
+                Content = this.materializer.Materialize(this.contentTextBox.Lines)
+            };
 
             set
             {
@@ -62,7 +59,7 @@
 
         bool HomeUi.ContentEditable
         {
-            get { return !this.contentTextBox.ReadOnly; }
+            get => !this.contentTextBox.ReadOnly;
 
             set
             {
@@ -73,7 +70,7 @@
 
         IList<JournalEntry> HomeUi.Entries
         {
-            get { return new List<JournalEntry>(); }
+            get => new List<JournalEntry>();
 
             set
             {
@@ -113,6 +110,6 @@
             }
         }
 
-        private readonly Func<IEnumerable<string>, MaterializedEnumerable<string>> materializeStrings;
+        private readonly Materializer materializer;
     }
 }
