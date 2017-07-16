@@ -3,7 +3,6 @@
     using System;
     using System.Reflection;
     using System.Windows.Forms;
-    using xofz.Journal.UI.Forms;
 
     internal static class EntryPoint
     {

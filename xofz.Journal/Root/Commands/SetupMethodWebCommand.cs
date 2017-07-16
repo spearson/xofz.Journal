@@ -30,7 +30,7 @@
         {
             var w = this.web;
             w.RegisterDependency(
-                new Navigator());
+                new Navigator(w));
             w.RegisterDependency(
                 this.messenger);
             w.RegisterDependency(
